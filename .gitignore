@@ -1,0 +1,7 @@
+log.*
+[1-9]*/
+[0].*/
+constant/polyMesh/
+postProcessing/
+dynamicCode/
+0/alpha.water
