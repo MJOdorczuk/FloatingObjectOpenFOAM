@@ -38,18 +38,18 @@ rigidBodyMotionCoeffs
             parent          root;
 
             // Cuboid dimensions
-            Lx              0.3;
-            Ly              0.2;
-            Lz              0.5;
+            Lx              1;
+            Ly              1;
+            Lz              1;
 
             // Density of the cuboid
             rho             500;
 
             // Cuboid mass
-            mass            #calc "$rho*$Lx*$Ly*$Lz";
+            mass            #calc "$rho*$Lx*$Ly*$Lz*3.14*0.25";
             L               ($Lx $Ly $Lz);
             centreOfMass    (0 0 0);
-            transform       (1 0 0 0 1 0 0 0 1) (0.5 0.45 0.1);
+            transform       (1 0 0 0 1 0 0 0 1) (0 0 0);
 
             joint
             {

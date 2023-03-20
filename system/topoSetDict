@@ -16,7 +16,7 @@ FoamFile
 
 actions
 (
-    {
+    /* {
         name    c0;
         type    cellSet;
         action  new;
@@ -31,7 +31,7 @@ actions
         name    c0;
         type    cellSet;
         action  invert;
-    }
+    } */
 );
 
 // ************************************************************************* //

@@ -15,8 +15,9 @@ cleanCase
 application=$(getApplication)
 
 runApplication blockMesh
+runApplication snappyHexMesh -overwrite
 runApplication topoSet
-runApplication subsetMesh -overwrite c0 -patch floatingObject -noFields
+# runApplication subsetMesh -overwrite c0 -patch floatingObject -noFields
 cp -r 0.orig 0 > /dev/null 2>&1
 runApplication setFields
 runApplication $application
