@@ -36,6 +36,10 @@ boundaryField
         type            kqRWallFunction;
         value           uniform 0.1;
     }
+    frontAndBack
+    {
+        type            empty;
+    }
 }
 
 
