@@ -103,7 +103,7 @@ castellatedMeshControls
         floatingObject
         {
             // Surface-wise min and max refinement level
-            level (0 0);
+            level (0 3);
         }
     }
 
