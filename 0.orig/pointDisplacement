@@ -34,7 +34,11 @@ boundaryField
     {
         type            calculated;
     }
-    frontAndBack
+    front
+    {
+        type            empty;
+    }
+    back
     {
         type            empty;
     }

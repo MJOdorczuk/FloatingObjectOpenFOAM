@@ -29,7 +29,7 @@ vertices
 
 blocks
 (
-    hex (0 1 2 3 4 5 6 7) (40 1 40) simpleGrading (1 1 1)
+    hex (0 1 2 3 4 5 6 7) (12 1 6) simpleGrading (1 1 1)
 );
 
 edges
@@ -48,12 +48,19 @@ boundary
             (0 4 7 3)
         );
     }
-    frontAndBack
+    front
     {
         type empty;
         faces
         (
             (1 5 4 0)
+        );
+    }
+    back
+    {
+        type empty;
+        faces
+        (
             (3 7 6 2)
         );
     }

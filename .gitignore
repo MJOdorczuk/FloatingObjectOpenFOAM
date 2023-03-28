@@ -6,3 +6,4 @@ constant/polyMesh/
 postProcessing/
 dynamicCode/
 screenshots/
+.vscode/

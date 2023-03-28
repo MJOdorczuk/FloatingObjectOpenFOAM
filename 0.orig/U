@@ -34,7 +34,11 @@ boundaryField
         type            movingWallVelocity;
         value           uniform (0 0 0);
     }
-    frontAndBack
+    front
+    {
+        type            empty;
+    }
+    back
     {
         type            empty;
     }
