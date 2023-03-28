@@ -42,6 +42,13 @@ geometry
     waterLevelBox // User defined region name
     {
         type   searchableBox;       // region defined by bounding box
+        min    (-6 0 -0.2);
+        max    (6 1 0.2);
+    }
+
+    waterLevelBigBox // User defined region name
+    {
+        type   searchableBox;       // region defined by bounding box
         min    (-6 0 -0.5);
         max    (6 1 0.5);
     }
@@ -105,6 +112,15 @@ castellatedMeshControls
     // intersections where the intersections make an
     // angle > resolveFeatureAngle get refined up to the maximum level.
 
+
+    refinementRegions
+    {
+        waterLevelBigBox
+        {
+            mode inside;
+            levels ((1 2));
+        }
+    }
 
     refinementRegions
     {
