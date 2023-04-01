@@ -46,7 +46,7 @@ rigidBodyMotionCoeffs
             rho             500;
 
             // Cuboid mass
-            mass            #calc "$rho*$Lx*$Ly*$Lz*3.14*0.25";
+            mass            #calc "$rho*$Lx*$Ly*$Lz*M_PI_4";
             L               ($Lx $Ly $Lz);
             centreOfMass    (0 0 0);
             transform       (1 0 0 0 1 0 0 0 1) (0 0 0);
