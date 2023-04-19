@@ -16,17 +16,18 @@ FoamFile
 
 ddtSchemes
 {
-    default         CrankNicolson 0.9;
+    default         CrankNicolson 0.5;
 }
 
 gradSchemes
 {
-    default         Gauss linear;
+    default cellLimited Gauss linear 1;
+    grad(U) cellLimited Gauss linear 1;
 }
 
 divSchemes
 {
-    div(rhoPhi,U)  Gauss vanLeerV;
+    div(rhoPhi,U)   Gauss linearUpwindV grad(U);
     div(phi,alpha)  Gauss interfaceCompression vanLeer 1;
     div(phi,k)      Gauss upwind;
     div(phi,epsilon) Gauss upwind;
@@ -35,7 +36,8 @@ divSchemes
 
 laplacianSchemes
 {
-    default         Gauss linear corrected;
+    default         Gauss linear limited 0.5;
+
 }
 
 interpolationSchemes
@@ -45,7 +47,7 @@ interpolationSchemes
 
 snGradSchemes
 {
-    default         corrected;
+    default         limited 0.5;
 }
 
 

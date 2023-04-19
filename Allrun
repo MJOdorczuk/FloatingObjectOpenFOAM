@@ -17,10 +17,10 @@ application=$(getApplication)
 runApplication blockMesh
 runApplication snappyHexMesh -overwrite
 runApplication extrudeMesh
-runApplication topoSet
-# runApplication subsetMesh -overwrite c0 -patch floatingObject -noFields
 cp -r 0.orig 0 > /dev/null 2>&1
 runApplication setFields
+runApplication decomposePar
 runApplication $application
+runApplication reconstructPar
 
 #------------------------------------------------------------------------------

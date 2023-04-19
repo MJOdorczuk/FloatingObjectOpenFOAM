@@ -23,8 +23,8 @@ boundaryField
     stationaryWalls
     {
         type            fixedFluxPressure;
-        gradient        uniform 0;
-        value           uniform 0;
+        gradient        $internalField;
+        value           $internalField;
     }
     atmosphere
     {
@@ -32,14 +32,14 @@ boundaryField
         rho             rho;
         psi             none;
         gamma           1;
-        p0              uniform 0;
-        value           uniform 0;
+        p0              $internalField;
+        value           $internalField;
     }
     floatingObject
     {
         type            fixedFluxPressure;
-        gradient        uniform 0;
-        value           uniform 0;
+        gradient        $internalField;
+        value           $internalField;
     }
     front
     {

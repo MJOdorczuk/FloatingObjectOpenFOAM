@@ -26,13 +26,13 @@ boundaryField
         Cmu             0.09;
         kappa           0.41;
         E               9.8;
-        value           uniform 0.1;
+        value           $internalField;
     }
     atmosphere
     {
         type            inletOutlet;
-        inletValue      uniform 0.1;
-        value           uniform 0.1;
+        inletValue      $internalField;
+        value           $internalField;
     }
     floatingObject
     {
@@ -40,7 +40,7 @@ boundaryField
         Cmu             0.09;
         kappa           0.41;
         E               9.8;
-        value           uniform 0.1;
+        value           $internalField;
     }
     front
     {

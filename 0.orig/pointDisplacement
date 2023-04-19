@@ -23,12 +23,12 @@ boundaryField
     stationaryWalls
     {
         type            fixedValue;
-        value           uniform (0 0 0);
+        value           $internalField;
     }
     atmosphere
     {
         type            fixedValue;
-        value           uniform (0 0 0);
+        value           $internalField;
     }
     floatingObject
     {

@@ -97,8 +97,8 @@ PIMPLE
 {
     momentumPredictor   no;
     nOuterCorrectors    3;
-    nCorrectors         1;
-    nNonOrthogonalCorrectors 0;
+    nCorrectors         3;
+    nNonOrthogonalCorrectors 1;
     correctPhi          yes;
     moveMeshOuterCorrectors yes;
 }
@@ -107,7 +107,7 @@ relaxationFactors
 {
     equations
     {
-        ".*" 1;
+        ".*" 0.5;
     }
 }
 

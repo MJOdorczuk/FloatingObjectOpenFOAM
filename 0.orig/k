@@ -23,18 +23,18 @@ boundaryField
     stationaryWalls
     {
         type            kqRWallFunction;
-        value           uniform 0.1;
+        value           $internalField;
     }
     atmosphere
     {
         type            inletOutlet;
-        inletValue      uniform 0.1;
-        value           uniform 0.1;
+        inletValue      $internalField;
+        value           $internalField;
     }
     floatingObject
     {
         type            kqRWallFunction;
-        value           uniform 0.1;
+        value           $internalField;
     }
     front
     {
