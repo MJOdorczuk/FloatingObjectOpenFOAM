@@ -55,7 +55,7 @@ rigidBodyMotionCoeffs
 
             patches         (floatingObject);
             innerDistance   0.05;
-            outerDistance   0.2;
+            outerDistance   0.1;
         }
     }
 }
