@@ -20,15 +20,17 @@ solvers
     {
         nAlphaCorr      2;
         nAlphaSubCycles 1;
+        cAlpha          1;
 
         MULESCorr       yes;
-        nLimiterIter    5;
+        nLimiterIter    15;
         alphaApplyPrevCorr  yes;
 
         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-8;
         relTol          0;
+        minIter         1;
     }
 
     "pcorr.*"
@@ -97,7 +99,7 @@ PIMPLE
 {
     momentumPredictor   no;
     nOuterCorrectors    3;
-    nCorrectors         3;
+    nCorrectors         5;
     nNonOrthogonalCorrectors 1;
     correctPhi          yes;
     moveMeshOuterCorrectors yes;
@@ -107,7 +109,7 @@ relaxationFactors
 {
     equations
     {
-        ".*" 0.5;
+        ".*" 0.9;
     }
 }
 

@@ -42,24 +42,15 @@ rigidBodyMotionCoeffs
             Ly              0.059;
             Lz              0.243;
 
-            // Density of the cuboid
-            // rho             200;
-
             // Cuboid mass
-            mass            0.621;//#calc "$rho*$Lx*$Ly*$Lz*M_PI_4";
+            mass            0.621; //#calc "$rho*$Lx*$Ly*$Lz*M_PI_4";
             L               ($Lx $Ly $Lz); //unnecessary as we do not allow any rotations
             centreOfMass    (0 0 0);
             transform       (1 0 0 0 1 0 0 0 1) (0 0 0);
 
             joint
             {
-                type            composite;
-                joints
-                (
-                    {
-                        type Pz;
-                    }
-                );
+                type            Pz;
             }
 
             patches         (floatingObject);

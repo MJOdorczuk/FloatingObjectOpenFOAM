@@ -17,7 +17,7 @@ FoamFile
 // Which of the steps to run
 castellatedMesh true;
 snap            true;
-addLayers       true;
+addLayers       false;
 
 
 // Geometry. Definition of all surfaces. All surfaces are of class
@@ -146,7 +146,7 @@ castellatedMeshControls
         floatingObject
         {
             // Surface-wise min and max refinement level
-            level (6 6);
+            level (4 4);
         }
     }
 
