@@ -14,20 +14,16 @@ cleanCase
 # Set application name
 application=$(getApplication)
 
-runApplication blockMesh
-runApplication surfaceFeatureExtract
-cp ./system/snappyHexMeshDict.refine ./system/snappyHexMeshDict > /dev/null 2>&1
-runApplication snappyHexMesh -overwrite
-# mv log.snappyHexMesh log.snappyHexMesh.refine
-runApplication extrudeMesh
-# cp ./system/snappyHexMeshDict.addLayers ./system/snappyHexMeshDict > /dev/null 2>&1
+# runApplication blockMesh
+# runApplication surfaceFeatureExtract
 # runApplication snappyHexMesh -overwrite
+# runApplication extrudeMesh
 cp -r 0.orig 0 > /dev/null 2>&1
-runApplication changeDictionary
+cp -r "./backups/polyMesh.$1" ./constant/polyMesh > /dev/null 2>&1 #
 runApplication setFields
 touch tmp.foam
 runApplication decomposePar
 mpirun -oversubscribe -np 16 $application -parallel | tee "log.$application" > /dev/null 2>&1
 runApplication reconstructPar
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------

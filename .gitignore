@@ -9,3 +9,8 @@ dynamicCode/
 screenshots/
 .vscode/
 processor*
+constant/extendedFeatureEdgeMesh/
+constant/geometry/smallCylinder.eMesh
+constant/triSurface/smallCylinder.eMesh
+tmp.foam
+experimental/

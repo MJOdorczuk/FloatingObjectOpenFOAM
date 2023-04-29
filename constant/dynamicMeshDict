@@ -7,6 +7,7 @@
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
+    version     2.0;
     format      ascii;
     class       dictionary;
     object      motionProperties;
@@ -25,10 +26,11 @@ rigidBodyMotionCoeffs
 
     solver
     {
-        type Newmark;
+        type    Newmark;
     }
 
-    accelerationRelaxation 0.7;
+    accelerationRelaxation 1;
+    accelerationDamping 1;
 
     bodies
     {
