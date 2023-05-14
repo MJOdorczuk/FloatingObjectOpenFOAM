@@ -11,49 +11,54 @@ FoamFile
     format      ascii;
     class       dictionary;
     location    "system";
-    object      fvSchemes;
+    object      controlDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-ddtSchemes
-{
-    default         CrankNicolson 0.5;
-}
+application     interFoam;
 
-gradSchemes
-{
-    default Gauss linear;
-    grad(U) cellLimited Gauss linear 1;
-}
+startFrom       startTime;
 
-divSchemes
-{
-    default Gauss linear;
-    div(rhoPhi,U)   Gauss linearUpwind grad(U);
-    div(phi,alpha)  Gauss vanLeer;
-    div(phi,k)      Gauss upwind;
-    div(phi,epsilon) Gauss upwind;
+startTime       0;
 
-}
+stopAt          endTime;
 
-laplacianSchemes
-{
-    default         Gauss linear limited 1;
-}
+endTime         3;
 
-interpolationSchemes
-{
-    default         linear;
-}
+deltaT          0.0001;
 
-snGradSchemes
-{
-    default         limited 1;
-}
+writeControl    adjustableRunTime;
 
-wallDist
+writeInterval   0.1;
+
+purgeWrite      0;
+
+writeFormat     binary;
+
+writePrecision  12;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  yes;
+
+maxCo           0.5;
+maxAlphaCo      0.5;
+maxDeltaT       0.1;
+
+functions
 {
-    method meshWave;
+    rigidBodyState
+    {
+        type           rigidBodyState;
+        libs           ("librigidBodyState.so");
+        angleFormat    degrees;
+    }
 }
 
 // ************************************************************************* //

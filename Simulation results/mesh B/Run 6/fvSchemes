@@ -10,28 +10,46 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    location    "constant";
-    object      transportProperties;
+    location    "system";
+    object      fvSchemes;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-phases (water air);
-
-water
+ddtSchemes
 {
-    transportModel  Newtonian;
-    nu              1e-06;
-    rho             998.2;
+    default         CrankNicolson 0.5;
 }
 
-air
+gradSchemes
 {
-    transportModel  Newtonian;
-    nu              1.48e-05;
-    rho             1;
+    default Gauss linear;
+    grad(U) cellLimited Gauss linear 1;
 }
 
-sigma           0.0728;
+divSchemes
+{
+    default Gauss linear;
+    div(rhoPhi,U)   Gauss linearUpwind grad(U);
+    div(phi,alpha)  Gauss vanLeer;
+    div(phi,k)      Gauss upwind;
+    div(phi,epsilon) Gauss upwind;
+
+}
+
+laplacianSchemes
+{
+    default         Gauss linear limited 1;
+}
+
+interpolationSchemes
+{
+    default         linear;
+}
+
+snGradSchemes
+{
+    default         limited 1;
+}
 
 
 // ************************************************************************* //

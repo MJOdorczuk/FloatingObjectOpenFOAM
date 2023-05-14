@@ -77,7 +77,7 @@ solvers
         maxIter         20;
     }
 
-    "(U|k|epsilon|omega)"
+    "(U|k|epsilon)"
     {
         solver          smoothSolver;
         smoother        GaussSeidel;
@@ -86,7 +86,7 @@ solvers
         nSweeps         1;
     }
 
-    "(U|k|epsilon|omega)Final"
+    "(U|k|epsilon)Final"
     {
         solver          smoothSolver;
         smoother        GaussSeidel;

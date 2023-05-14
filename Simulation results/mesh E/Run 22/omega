@@ -11,36 +11,28 @@ FoamFile
     format      ascii;
     class       volScalarField;
     location    "0";
-    object      epsilon;
+    object      omega;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 2 -3 0 0 0 0];
+dimensions      [ 0 0 -1 0 0 0 0 ];
 
-internalField   uniform 0.001;
+internalField   uniform 1e-2;
 
 boundaryField
 {
     stationaryWalls
     {
-        type            epsilonWallFunction;
-        Cmu             0.09;
-        kappa           0.41;
-        E               9.8;
+        type            omegaWallFunction;
         value           $internalField;
     }
     atmosphere
     {
-        type            inletOutlet;
-        inletValue      $internalField;
-        value           $internalField;
+        type            zeroGradient;
     }
     floatingObject
     {
-        type            epsilonWallFunction;
-        Cmu             0.09;
-        kappa           0.41;
-        E               9.8;
+        type            omegaWallFunction;
         value           $internalField;
     }
     front

@@ -16,7 +16,7 @@ application=$(getApplication)
 
 runApplication blockMesh
 runApplication surfaceFeatureExtract
-cp ./system/snappyHexMeshDict.refine ./system/snappyHexMeshDict > /dev/null 2>&1
+# cp ./system/snappyHexMeshDict.refine ./system/snappyHexMeshDict > /dev/null 2>&1
 runApplication snappyHexMesh -overwrite
 # mv log.snappyHexMesh log.snappyHexMesh.refine
 runApplication extrudeMesh

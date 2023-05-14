@@ -28,7 +28,7 @@ RAS
     turbulenceProperties
     {
         // Turbulence intensity
-        intensity       0.01;
+        intensity       0.05;
 
         // Turbulence length scale
         lengthScale     0.01;

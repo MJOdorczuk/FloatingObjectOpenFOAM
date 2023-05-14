@@ -31,7 +31,7 @@ RAS
         intensity       0.01;
 
         // Turbulence length scale
-        lengthScale     0.01;
+        lengthScale     0.05;
     }
 }
 
